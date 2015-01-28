@@ -48,7 +48,13 @@ set showmatch               " 対応する括弧を強調表示
 "set autoindent             " 改行時前行の改行位置を引き継ぐ
 set backupdir=~/.vim/tmp    " backupファイル作成ディレクトリ
 syntax enable               " デフォルトのハイライトを有効
-set background=dark
+                            " guimodeの場合の処理分岐
+if has('gui_running')
+"    set background=light
+    set background=dark
+else
+    set background=dark
+endif
 colorscheme solarized
 "set columns=120            " 画面横幅
 "set lines=40               " 画面高さ
