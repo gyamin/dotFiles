@@ -25,6 +25,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " Note: You don't set neobundle setting in .gvimrc!
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
+NeoBundle 'altercation/vim-colors-solarized'
 
 call neobundle#end()
 
@@ -38,7 +39,23 @@ NeoBundleCheck
 " Neo Bundle Setting End
 " ------------------------
 
+" preview setting
 " ------------------------
+"let g:previm_open_cmd = 'open -a Firefox'              " previm PrevimOpenコマンドで利用するブラウザを設定
+augroup PrevimSettings                                  " previmでプレビュー対象のmarkdownファイルの拡張子を設定
+    autocmd!
+    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+augroup END
+" ------------------------
+
+" colorscheme setting
+" ------------------------
+syntax enable               " デフォルトのハイライトを有効
+set background=dark
+colorscheme solarized
+let g:solarized_termcolors=256
+" ------------------------
+
 " User Setting
 " ------------------------
 set tabstop=4               " tab幅の設定
@@ -47,19 +64,10 @@ set showmatch               " 対応する括弧を強調表示
 "set number                 " 行番号を表示
 "set autoindent             " 改行時前行の改行位置を引き継ぐ
 set backupdir=~/.vim/tmp    " backupファイル作成ディレクトリ
-syntax enable               " デフォルトのハイライトを有効
-                            " guimodeの場合の処理分岐
-if has('gui_running')
-"    set background=light
-    set background=dark
-else
-    set background=dark
-endif
-colorscheme solarized
 "set columns=120            " 画面横幅
 "set lines=40               " 画面高さ
-"let g:previm_open_cmd = 'open -a Firefox'              " previm PrevimOpenコマンドで利用するブラウザを設定
-augroup PrevimSettings                                  " previmでプレビュー対象のmarkdownファイルの拡張子を設定
-    autocmd!
-    autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
-augroup END
+
+if has('gui_running')       " guimodeの場合の処理分岐
+else
+endif
+" ------------------------
