@@ -1,5 +1,5 @@
 # rbenv setting
-if [ -f $HOME/.rbenv/shims ]; then
+if [ -e $HOME/.rbenv/shims ]; then
     eval "$(rbenv init -)"
 fi
 # nvm setting
