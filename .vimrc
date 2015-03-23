@@ -63,11 +63,14 @@ set expandtab               " tabの代わりにspaceを使用
 set showmatch               " 対応する括弧を強調表示
 "set number                 " 行番号を表示
 "set autoindent             " 改行時前行の改行位置を引き継ぐ
-set backupdir=~/.vim/tmp    " backupファイル作成ディレクトリ
+set backupdir=~/.vim/tmp/bkup   " backupファイル作成ディレクトリ
+set undodir=~/.vim/tmp/undo     " undoファイル作成ディレクトリ
 "set columns=120            " 画面横幅
 "set lines=40               " 画面高さ
 
 if has('gui_running')       " guimodeの場合の処理分岐
+    set columns=120            " 画面横幅
+    set lines=40               " 画面高さ
 else
 endif
 " ------------------------
