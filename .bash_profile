@@ -1,3 +1,7 @@
+# source .bashrc
+if [ -f $HOME/.bashrc ]; then
+    source $HOME/.bashrc
+fi
 # rbenv setting
 if [ -e $HOME/.rbenv/shims ]; then
     eval "$(rbenv init -)"
