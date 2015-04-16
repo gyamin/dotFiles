@@ -1,1 +1,1 @@
-alias gvim=/Applications/MacVim.app/Contents/MacOS/MacVim
+alias mvim=/Applications/MacVim.app/Contents/MacOS/mvim
