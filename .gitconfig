@@ -1,0 +1,17 @@
+[user]
+	name = Yasumasa Nogami
+	email = yasumasa@hoge.com
+[diff]
+	tool = vimdiff2
+[merge]
+	tool = vimdiff2
+[alias]
+	st = status
+    br = branch
+    com = commit
+    cho = checkout
+    slog = log --pretty=format:'%h %s'
+    glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    galog = log --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+[core]
+	excludesfile = /Users/Yasumasa/.gitignore
