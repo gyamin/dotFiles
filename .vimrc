@@ -23,6 +23,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 " My Bundles here:
 " Refer to |:NeoBundle-examples|.
 " Note: You don't set neobundle setting in .gvimrc!
+NeoBundle 'Align'
 NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'altercation/vim-colors-solarized'
@@ -41,7 +42,9 @@ NeoBundleCheck
 
 " preview setting
 " ------------------------
-"let g:previm_open_cmd = 'open -a Firefox'              " previm PrevimOpenコマンドで利用するブラウザを設定
+"let g:previm_open_cmd = 'open -a Firefox'                  " previm PrevimOpenコマンドで利用するブラウザを設定
+"let g:previm_open_cmd = 'open -a Safari'
+let g:previm_open_cmd = 'open -a /Applications/Google\ Chrome.app'
 augroup PrevimSettings                                  " previmでプレビュー対象のmarkdownファイルの拡張子を設定
     autocmd!
     autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
@@ -74,4 +77,6 @@ if has('gui_running')       " guimodeの場合の処理分岐
     set lines=40               " 画面高さ
 else
 endif
+
+cd ~/Desktop                " 特定のディレクトリにcdする(初期のディレクトリを指定する)
 " ------------------------
