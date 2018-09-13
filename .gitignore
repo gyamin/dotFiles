@@ -1,0 +1,6 @@
+# Author:   gyamin
+# Outline:  git global ignore file
+
+.DS_Store
+*\.swp
+.idea/

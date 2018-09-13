@@ -3,31 +3,23 @@ if [ -f $HOME/.bashrc ]; then
     source $HOME/.bashrc
 fi
 
-# rbenv setting
-if [ -e $HOME/.rbenv/shims ]; then
-    eval "$(rbenv init -)"
+# rbenv 
+if [ -e $HOME/.rbenv ]; then
+    eval "$(rbenv init -)" 
 fi
 
-# nodebrew setting
-if [ -e $HOME/.nodebrew/current/bin ]; then
-    PATH=$HOME/.nodebrew/current/bin:$PATH
+# nodeenv
+if [ -e $HOME/.nodenv ]; then
+    eval "$(nodenv init -)"
 fi
 
-## phpbrew setting
-#if [ -f $HOME/.phpbrew/bashrc ]; then
-#    source $HOME/.phpbrew/bashrc
-#fi
-
-## activator setting
-#if [ -e $HOME/.activator/bin ]; then
-#    PATH=$HOME/.activator/bin:$PATH
-#fi
-
-export PATH
+# pyenv
+if command -v pyenv 1>/dev/null 2>&1; then
+    export PYENV_ROOT="$HOME/.pyenv"
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
 
 # ls color setting
 export CLICOLOR=1
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/Yasumasa/.sdkman"
-[[ -s "/Users/Yasumasa/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/Yasumasa/.sdkman/bin/sdkman-init.sh"
