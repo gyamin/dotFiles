@@ -21,5 +21,11 @@ if command -v pyenv 1>/dev/null 2>&1; then
     eval "$(pyenv virtualenv-init -)"
 fi
 
+# goenv
+if [ -e $HOME/.goenv ]; then
+    export PATH="$HOME/.goenv/shims:$PATH"
+    eval "$(goenv init -)"
+fi
+
 # ls color setting
 export CLICOLOR=1
