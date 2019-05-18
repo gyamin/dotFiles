@@ -5,25 +5,29 @@ fi
 
 # rbenv 
 if [ -e $HOME/.rbenv ]; then
+    export PATH="$HOME/.rbenv/bin:$PATH"
     eval "$(rbenv init -)" 
 fi
 
 # nodeenv
 if [ -e $HOME/.nodenv ]; then
+    export PATH="$HOME/.nodenv/bin:$PATH"
     eval "$(nodenv init -)"
 fi
 
 # pyenv
-if command -v pyenv 1>/dev/null 2>&1; then
+if [ -e $HOME/.pyenv ]; then
     export PYENV_ROOT="$HOME/.pyenv"
     export PATH="$PYENV_ROOT/bin:$PATH"
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
+    if command -v pyenv 1>/dev/null 2>&1; then
+        eval "$(pyenv init -)"
+    fi
 fi
 
 # goenv
 if [ -e $HOME/.goenv ]; then
-    export PATH="$HOME/.goenv/shims:$PATH"
+    export GOENV_ROOT="$HOME/.goenv"
+    export PATH="$GOENV_ROOT/bin:$PATH"
     eval "$(goenv init -)"
 fi
 
