@@ -24,12 +24,27 @@ if [ -e $HOME/.pyenv ]; then
         source ~/.bashrc;
     fi
 fi
+# pyenv-virtualenv
+if [ -e $HOME/.pyenv/plugins/pyenv-virtualenv ]; then
+    eval "$(pyenv virtualenv-init -)"
+fi
 
 # goenv
 if [ -e $HOME/.goenv ]; then
     export GOENV_ROOT="$HOME/.goenv"
     export PATH="$GOENV_ROOT/bin:$PATH"
     eval "$(goenv init -)"
+fi
+
+# phpenv
+if [ -e $HOME/.phpenv ]; then
+    export PATH="$HOME/.phpenv/bin:$PATH"
+    eval "$(phpenv init -)"
+fi
+
+# mysql-client
+if [ -e /usr/local/opt/mysql-client/bin ]; then
+    export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 fi
 
 # ls color setting
