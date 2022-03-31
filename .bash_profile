@@ -3,6 +3,14 @@ if [ -f $HOME/.bashrc ]; then
     source $HOME/.bashrc
 fi
 
+# homebrew
+if [ -e /opt/homebrew/bin/brew ]; then
+    eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+# ===================================
+# develop language enviroment
+# ===================================
 # rbenv 
 if [ -e $HOME/.rbenv ]; then
     export PATH="$HOME/.rbenv/bin:$PATH"
