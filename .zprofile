@@ -61,3 +61,6 @@ fi
 
 # ls color setting
 export CLICOLOR=1
+
+# Added by Toolbox App
+export PATH="$PATH:/Users/nogami/Library/Application Support/JetBrains/Toolbox/scripts"
