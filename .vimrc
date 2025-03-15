@@ -64,7 +64,7 @@ let g:solarized_termcolors=256
 set tabstop=4               " tab幅の設定
 set expandtab               " tabの代わりにspaceを使用
 set showmatch               " 対応する括弧を強調表示
-"set number                  " 行番号を表示
+set number                  " 行番号を表示
 set autoindent              " 改行時前行の改行位置を引き継ぐ
 set undodir=~/.vim/tmp/undo         " undoファイル作成ディレクトリ
 set backupdir=~/.vim/tmp/bkup       " undoファイル作成ディレクトリ
