@@ -71,7 +71,7 @@ set backupdir=~/.vim/tmp/bkup       " undoファイル作成ディレクトリ
 "set columns=120            " 画面横幅
 "set lines=40               " 画面高さ
 set guifont=Osaka-Mono:h16  " フォント指定
-set clipboard=unnamed       " クリップボード有効
+set clipboard+=unnamed       " クリップボード有効
 
 if has('gui_running')       " guimodeの場合の処理分岐
     set columns=120            " 画面横幅

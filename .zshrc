@@ -10,7 +10,6 @@ fi
 
 export PATH="/opt/homebrew/bin:$PATH"
 
-
 # ===================================
 # develop language enviroment
 # ===================================
@@ -38,19 +37,9 @@ if [ -e $HOME/.pyenv/plugins/pyenv-virtualenv ]; then
 fi
 
 # goenv
-if [ -e $HOME/.goenv ]; then
-    export GOENV_ROOT="$HOME/.goenv"
-    export PATH="$GOENV_ROOT/bin:$PATH"
-    eval "$(goenv init -)"
-fi
+#if [ -e $HOME/.goenv ]; then
+#    export GOENV_ROOT="$HOME/.goenv"
+#    export PATH="$GOENV_ROOT/bin:$PATH"
+#    eval "$(goenv init -)"
+#fi
 
-# phpenv
-if [ -e $HOME/.phpenv ]; then
-    export PATH="$HOME/.phpenv/bin:$PATH"
-    eval "$(phpenv init -)"
-fi
-
-
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-export PATH="/Users/nogami/.rd/bin:$PATH"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)

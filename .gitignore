@@ -5,3 +5,8 @@
 *\.swp
 .idea
 .vscode
+
+.python-version
+.node-version
+.venv
+node_modules
