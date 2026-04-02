@@ -1,44 +1,14 @@
+" pugged setting
 " ------------------------
-" Neo Bundle Setting Start
-" ------------------------
-" Note: Skip initialization for vim-tiny or vim-small.
-if !1 | finish | endif
-
-if has('vim_starting')
-  if &compatible
-    set nocompatible               " Be iMproved
-  endif
-
-  " Required:
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
-endif
-
-" Required:
-call neobundle#begin(expand('~/.vim/bundle/'))
-
-" Let NeoBundle manage NeoBundle
-" Required:
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-" My Bundles here:
-" Refer to |:NeoBundle-examples|.
-" Note: You don't set neobundle setting in .gvimrc!
-NeoBundle 'Align'
-NeoBundle 'kannokanno/previm'
-NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'altercation/vim-colors-solarized'
-
-call neobundle#end()
-
-" Required:
-filetype plugin indent on
-
-" If there are uninstalled bundles found on startup,
-" this will conveniently prompt you to install them.
-NeoBundleCheck
-" ------------------------
-" Neo Bundle Setting End
-" ------------------------
+call plug#begin('~/.vim/plugged')
+ 
+Plug 'junegunn/vim-easy-align'
+Plug 'altercation/vim-colors-solarized'
+Plug 'kannokanno/previm'
+Plug 'tyru/open-browser.vim'
+ 
+call plug#end()
+" -----------------------
 
 " preview setting
 " ------------------------
@@ -62,6 +32,8 @@ let g:solarized_termcolors=256
 " User Setting
 " ------------------------
 set tabstop=4               " tab幅の設定
+set shiftwidth=4
+set softtabstop=4
 set expandtab               " tabの代わりにspaceを使用
 set showmatch               " 対応する括弧を強調表示
 set number                  " 行番号を表示
