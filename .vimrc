@@ -24,6 +24,7 @@ augroup END
 " colorscheme setting
 " ------------------------
 syntax enable               " デフォルトのハイライトを有効
+set t_Co=256
 set background=dark
 colorscheme solarized
 let g:solarized_termcolors=256
